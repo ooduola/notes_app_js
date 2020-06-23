@@ -1,14 +1,36 @@
 (function(exports) {
 
-  function checkForNotesList() {
+  function testcheckForNotesList() {
 
-    var list = new NotesList("hello")
+    var noteList = new NotesList()
 
-    if (list.list !== ["hello"]) {
-      throw new Error("This is not an array")
+    assert.isTrue( noteList.returnList().length === 0 )
+
+
+  //   if ( noteList.returnList().length !== 0 ) {
+  //     throw new Error("This is not an empty  array")
+  //   }
+   };
+
+  testcheckForNotesList();
+
+})(this);
+
+(function(exports) {
+
+  function testcheckForNoteCreated() {
+
+    var noteList = new NotesList()
+    noteList.createNote("Hello")
+
+    assert.isTrue( noteList.returnList()[0] === "Hello")
+     
+    // if ( noteList.returnList()[0] !== "Hello" ) {
+    //   throw new Error("Array doesnt contain hello")
+
+    // }
     }
-  };
 
-  checkForNotesList();
+  testcheckForNoteCreated();
 
 })(this);
