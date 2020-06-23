@@ -3,7 +3,8 @@
 (function (exports) {
 
   function testNoteListViewHasNoteList() {
-  var noteListView = new NoteListView();
+  var newList = new NotesList();
+  var noteListView = new NoteListView(newList);
 
     if(noteListView.list.notes.length !== 0) {
     throw new Error('Not working!');
@@ -16,7 +17,8 @@
 (function (exports) {
 
   function testReturnsHTMLString() {
-    var noteListView = new NoteListView();
+    var newList = new NotesList();
+    var noteListView = new NoteListView(newList);
     noteListView.list.createNote("Hello");
 
     if(noteListView.returnString() !== '<ul><li><div>Hello</div></li></ul>') {
@@ -30,12 +32,12 @@
 (function (exports) {
 
   function testReturnsHTMLStringWithSeveralNotes() {
-
-    var noteListView = new NoteListView();
+    var newList = new NotesList();
+    var noteListView = new NoteListView(newList);
     noteListView.list.createNote("Hello");
     noteListView.list.createNote("Test");
   
-    if(noteListView.returnString() !== '<ul><li><div>Hello</div></li><li><div>Test</div></li></ul>') {
+    if(noteListView.returnString() !== "<ul><li><div>Hello</div></li><li><div>Test</div></li></ul>") {
       throw new Error('Nah mateeee');
     }
   }
