@@ -10,13 +10,13 @@
   function Controller(notesList) {
     this.notesList = notesList;
     this.notesList.createNote("Favourite drink: seltzer")
-    this.noteListView = new NoteListView(notesList);
+    
   }
 
   Controller.prototype.insertHTML = function() {
+    noteListView = new NoteListView(this.notesList);
     var element = document.getElementById('app')
-
-    element.innerHTML = this.noteListView.returnString();
+    element.innerHTML = noteListView.returnString();
   }
 
   exports.Controller = Controller;
