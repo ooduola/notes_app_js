@@ -2,7 +2,6 @@
   
   function NotesList() {
     this.notes = []
-
   }
 
   NotesList.prototype.returnList = function() {
@@ -10,7 +9,8 @@
   }
 
   NotesList.prototype.createNote = function(text) { 
-    this.notes.push(text)
+    var noteapp = new NotesApp(text);
+    this.notes.push(noteapp)
   }
 
   exports.NotesList = NotesList; 

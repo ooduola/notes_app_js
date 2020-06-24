@@ -5,11 +5,17 @@
     }
 
     NoteListView.prototype.returnString = function() {
-      var array = this.list.notes
+      var array = this.list.returnList() /// array of [NoteApps]
+
+      
       if(array.length < 1) {
         throw new Error ("Notes list empty")
       } else {
-        return "<ul><li><div>" + array.join("</div></li><li><div>") + "</div></li></ul>"
+        var string = "<ul>"
+          array.forEach(element => {
+          string += "<li><div>" + element.returnNote() + "</div></li>"
+        });
+        return string += "</ul>"
       }
     };
 

@@ -4,7 +4,7 @@
     this.note = note
   }
 
-  NotesApp.prototype.note = function() {
+  NotesApp.prototype.returnNote = function() {
     return this.note
   }
 
