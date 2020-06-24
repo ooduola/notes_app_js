@@ -13,7 +13,7 @@
       } else {
         var string = "<ul>"
           array.forEach(element => {
-          string += "<li><div>" + element.returnNote() + "</div></li>"
+          string += "<li><div>" + element.returnNote().slice(0, 20) + "</div></li>"
         });
         return string += "</ul>"
       }

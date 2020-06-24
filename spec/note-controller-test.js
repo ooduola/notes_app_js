@@ -6,7 +6,7 @@
     var controller = new Controller(noteList)
     controller.insertHTML()
     expectedResult = '<ul><li><div>Hello</div></li>'
-    expectedResult += '<li><div>Favourite drink: seltzer</div></li></ul>'
+    expectedResult += '<li><div>Note 2</div></li></ul>'
     assert.isTrue(document.getElementById('app').innerHTML === expectedResult)
     }
     

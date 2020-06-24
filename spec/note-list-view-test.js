@@ -44,3 +44,18 @@
 
   testReturnsHTMLStringWithSeveralNotes();
 })(this);
+
+(function (exports) {
+
+  function testReturnsHTMLStringFirstTwentyChar() {
+    var newList = new NotesList();
+    var noteListView = new NoteListView(newList);
+    noteListView.list.createNote("a really long sentence");
+
+    if(noteListView.returnString() !== '<ul><li><div>a really long senten</div></li></ul>') {
+      throw new Error('Your HTML String has not been returned');
+    }
+  }
+
+  testReturnsHTMLStringFirstTwentyChar();
+})(this);

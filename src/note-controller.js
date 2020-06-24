@@ -9,7 +9,7 @@
 (function (exports) {
   function Controller(notesList) {
     this.notesList = notesList;
-    this.notesList.createNote("Favourite drink: seltzer")
+    this.notesList.createNote("Note 2")
     
   }
 
