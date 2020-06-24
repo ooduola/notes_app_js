@@ -1,7 +1,8 @@
 (function(exports) {
 
-  function NotesApp(note) {
-    this.note = note
+  function NotesApp(note, id = null) {
+    this.note = note;
+    this.id = id;
   }
 
   NotesApp.prototype.returnNote = function() {
