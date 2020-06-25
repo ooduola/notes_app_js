@@ -9,8 +9,8 @@
   }
 
   NotesList.prototype.createNote = function(text) { 
-    var noteapp = new NotesApp(text, this.id);
-    this.notes.push(noteapp)
+    var noteText = new NotesApp(text, this.id);
+    this.notes.push(noteText)
     this.id++;
   }
 

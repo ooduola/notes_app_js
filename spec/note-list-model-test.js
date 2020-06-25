@@ -1,18 +1,11 @@
 (function(exports) {
 
-  function testCheckForNotesList() {
-
+  function testCheckNotesListReturnsList() {
     var noteList = new NotesList()
-
     assert.isTrue( Array.isArray(noteList.returnList()) )
-
-  //   if ( noteList.returnList().length !== 0 ) {
-  //     throw new Error("This is not an empty  array")
-  //   }
   };
 
-  testCheckForNotesList();
-
+  testCheckNotesListReturnsList();
 })(this);
 
 (function(exports) {
@@ -21,7 +14,8 @@
 
     var noteList = new NotesList()
     noteList.createNote("Hello")
-    assert.isTrue( noteList.returnList()[0].returnNote() === "Hello")
+    var noteListArray = noteList.returnList()
+    assert.isTrue( noteListArray[noteListArray.length - 1].returnNote() === "Hello")
     }
   testCheckForNoteCreated();
 

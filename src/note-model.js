@@ -1,12 +1,16 @@
 (function(exports) {
 
-  function NotesApp(note, id = null) {
-    this.note = note;
+  function NotesApp(text, id = null) {
+    this.text = text;
     this.id = id;
   }
 
   NotesApp.prototype.returnNote = function() {
-    return this.note
+    return this.text
+  }
+
+  NotesApp.prototype.returnId = function() {
+    return this.id
   }
 
   exports.NotesApp = NotesApp;

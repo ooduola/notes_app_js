@@ -10,7 +10,6 @@
   function Controller(notesList) {
     this.notesList = notesList;
     this.notesList.createNote("Note 2")
-    
   }
 
   Controller.prototype.insertHTML = function() {

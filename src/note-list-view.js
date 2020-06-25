@@ -5,14 +5,14 @@
     }
 
     NoteListView.prototype.returnString = function() {
-      var array = this.list.returnList() /// array of [NoteApps]
+      var noteListArray = this.list.returnList() // returns an array of [NoteApps]
 
       
-      if(array.length < 1) {
+      if(noteListArray.length < 1) {
         throw new Error ("Notes list empty")
       } else {
         var string = "<ul>"
-          array.forEach(element => {
+        noteListArray.forEach(element => {
           string += "<li><div>" + element.returnNote().slice(0, 20) + "</div></li>"
         });
         return string += "</ul>"

@@ -1,34 +1,36 @@
 // import { NoteListView } from "../src/note-list-view";
-(function (exports) {
+(function () {
 
   function testNoteListViewHasNoteList() {
   var newList = new NotesList();
+  newList.createNote("Hello")
   var noteListView = new NoteListView(newList);
 
-    if(noteListView.list.returnList().length !== 0) {
-    throw new Error('Not working!');
+    if(noteListView.returnString() === []) {
+    throw new Error('CreateNote function has failed');
     }
   }
 
   testNoteListViewHasNoteList();
-})(this);
+})();
 
-(function (exports) {
+
+(function () {
 
   function testReturnsHTMLString() {
     var newList = new NotesList();
+    newList.createNote("Hello")
     var noteListView = new NoteListView(newList);
-    noteListView.list.createNote("Hello");
 
     if(noteListView.returnString() !== '<ul><li><div>Hello</div></li></ul>') {
-      throw new Error('Your HTML String has not been returned');
+      throw new Error('HTML String has not been returned');
     }
   }
 
   testReturnsHTMLString();
-})(this);
+})();
 
-(function (exports) {
+(function () {
 
   function testReturnsHTMLStringWithSeveralNotes() {
     var newList = new NotesList();
@@ -43,9 +45,9 @@
   }
 
   testReturnsHTMLStringWithSeveralNotes();
-})(this);
+})();
 
-(function (exports) {
+(function () {
 
   function testReturnsHTMLStringFirstTwentyChar() {
     var newList = new NotesList();
@@ -58,4 +60,4 @@
   }
 
   testReturnsHTMLStringFirstTwentyChar();
-})(this);
+})();
