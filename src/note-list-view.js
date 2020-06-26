@@ -12,7 +12,7 @@
       } else {
           let string = "<ul>"
           noteListArray.forEach(NotesApp => {
-          string += "<li><div>" + NotesApp.returnNote().slice(0, 20) + "</div></li>"
+          string += "<li><div>"  + NotesApp.returnNote().slice(0, 20) + "</div></li>"
           });
         return string += "</ul>"
       }
