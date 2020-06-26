@@ -9,10 +9,9 @@
   }
 
   NotesList.prototype.createNote = function(text) { 
-    var noteText = new NotesApp(text, this.id);
+    let noteText = new NotesApp(text, this.id);
     this.notes.push(noteText)
     this.id++;
   }
-
   exports.NotesList = NotesList; 
 })(this);

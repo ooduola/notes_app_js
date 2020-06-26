@@ -10,10 +10,8 @@
     if ( !this.notesApp ) {
       return null
     }
-    
-    string = "<div>"
-    string += this.notesApp.returnNote()
-    return string += "</div>"
+    return "<div>" + this.notesApp.returnNote() + "</div>"
+      
   }
 
 
